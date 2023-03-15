@@ -54,6 +54,9 @@ body {
 
 /* ------------------ Common styling ------------------- */
 
+img {
+  display: block;
+}
 .section {
   padding: 120px 0;
 }
@@ -103,7 +106,8 @@ body {
   margin: 0;
   padding: 0;
 }
-.link {
+.link,
+.logo {
   font-style: normal;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -134,6 +138,7 @@ body {
 
 /* ------------------ Header ------------------- */
 .header {
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .main-nav {
@@ -174,8 +179,20 @@ body {
 }
 /* ------------------ Hero ------------------- */
 .hero {
+  max-width: 1440px;
+  height: 600px;
   padding: 188px 0;
   background-color: var(--hero-bg-color);
+  background-position: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  text-align: center;
+  background-image: linear-gradient(
+      to right,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url("../images/hero.jpg");
 }
 .hero-wrapper {
   text-align: center;
@@ -226,7 +243,16 @@ body {
 }
 .description {
 }
-
+.qualities-icon-box {
+  background-color: var(--light-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 112px;
+  margin-bottom: 8px;
+}
+.qualities-icon {
+}
 /* ------------------ Domain ------------------- */
 .domain {
 }
@@ -251,7 +277,10 @@ body {
 .team {
   background-color: var(--accent-color);
 }
-
+/* .team-list img {
+  display: block;
+  background-color: orange;
+} */
 .team-title {
   text-align: center;
 }
@@ -261,14 +290,10 @@ body {
   column-gap: 24px;
   text-align: center;
 }
-.team-list img {
-  margin-bottom: 32px;
-}
 
 .team-item {
   flex-basis: calc((100% - 2 * 24px) / 4);
 
-  padding-bottom: 32px;
   background-color: var(--white-color);
   border-radius: 4px;
   box-shadow: 0 2px 1px 0 rgb(46 47 66 / 8%), 0 1px 1px 0 rgb(46 47 66 / 16%);
@@ -279,15 +304,85 @@ body {
 .subtitle {
 }
 .team-description {
+  margin-bottom: 8px;
 }
 .description {
 }
+.team-content {
+  padding: 32px 16px;
+}
+
+/* Social links  */
+.social-list {
+  display: flex;
+  column-gap: 24px;
+  justify-content: center;
+}
+
+.social-list-item {
+  width: 40px;
+  height: 40px;
+}
+.social-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-brand-color);
+  border-radius: 50%;
+}
+.social-list-link:is(:hover, :focus) {
+  background-color: var(--active-state-color);
+}
+
+.social-list-icon {
+  fill: var(--light-bg-color);
+}
+
+/* ------------------ Customers------------------- */
+
+.customers {
+  text-align: center;
+}
+
+.customers-title {
+}
+.customers-list {
+  display: flex;
+  column-gap: 24px;
+}
+
+.customers-item {
+  flex-basis: calc((100% - 5 * 24px) / 6);
+}
+.customers-link {
+  display: block;
+  padding: 16px 32px;
+  border: 1px solid var(--helper-text-color);
+  border-radius: 4px;
+  color: var(--active-state-color);
+}
+.customers-link:is(:hover, :focus) {
+  border: 1px solid var(--active-state-color);
+}
+
+.customers-list-icon {
+  fill: var(--helper-text-color);
+}
+.customers-link:is(:hover, :focus) .customers-list-icon {
+  fill: currentColor;
+}
+
 /* ------------------ Portfolio page ------------------- */
 /* ------------------ Projects ------------------- */
 
 .projects {
   padding-top: 96px;
   padding-bottom: 120px;
+}
+.projects-link {
+  text-decoration: none;
 }
 
 .projects-nav {
@@ -331,6 +426,11 @@ body {
 .projects-items {
   flex-basis: calc((100% - 2 * 24px) / 3);
 }
+.projects-items:hover,
+.projects-items:focus {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16);
+}
 .projects-subtitle {
 }
 
@@ -348,6 +448,9 @@ body {
   padding-bottom: 100px;
   background-color: var(--hero-bg-color);
 }
+.footer-container {
+  display: flex;
+}
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
@@ -358,4 +461,38 @@ body {
 .footer-description {
   width: 264px;
   color: var(--accent-color);
+}
+
+.footer-social {
+  margin-left: 120px;
+}
+.footer-social-title {
+  margin: 0;
+  margin-bottom: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  font-size: var(--general-text-font);
+
+  color: var(--white-color);
+}
+.footer-social-list {
+  display: flex;
+  column-gap: 16px;
+}
+
+.social-list-item {
+  width: 40px;
+  height: 40px;
+}
+.footer-social-link {
+  background-color: #ffffff10;
+}
+
+.footer-social-link:is(:hover, :focus) {
+  background-color: var(--succes-state-color);
+}
+
+.social-list-icon {
+  fill: var(--light-bg-color);
 }
